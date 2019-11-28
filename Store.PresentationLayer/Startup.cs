@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Store.PresentationLayer.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Store.Infra.Data;
 
 namespace Store.PresentationLayer
 {
@@ -36,6 +37,9 @@ namespace Store.PresentationLayer
             });
 
             services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<StoreDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>()
