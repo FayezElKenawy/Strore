@@ -1,0 +1,23 @@
+﻿@model Store.Application.ViewModels.StudentViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div>
+    <div class="col-sm-4">Student No</div>
+    <div class="col-sm-4">Frist Name</div>
+    <div class="col-sm-4">Last Name</div>
+    <div class="col-sm-4">Details</div>
+</div>
+@foreach (var student in Model.Students)
+{
+<div>
+    <div class="col-sm-4">@student.Id</div>
+    <div class="col-sm-4">@student.Fname</div>
+    <div class="col-sm-4">@student.Lname</div>
+    <div class="col-sm-4">@student.Details</div>
+
+</div>
+}
+
