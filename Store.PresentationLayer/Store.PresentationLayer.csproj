@@ -2,14 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <UserSecretsId>aspnet-Store.UI-B6E20EBC-C3EE-4960-A34A-60288AE3412B</UserSecretsId>
+    <UserSecretsId>aspnet-Store.PresentationLayer-75778D9F-54C6-488F-B385-B9BF868E3931</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Data\Migrations\20191127154010_creating identity.cs" />
-    <Compile Remove="Data\Migrations\20191127154010_creating identity.Designer.cs" />
-  </ItemGroup>
 
 
   <ItemGroup>
