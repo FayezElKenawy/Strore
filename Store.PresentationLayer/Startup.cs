@@ -14,6 +14,7 @@ using Store.PresentationLayer.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Store.Infra.Data;
+using Store.Infra.Ioc;
 
 namespace Store.PresentationLayer
 {
@@ -47,6 +48,7 @@ namespace Store.PresentationLayer
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            ServiceRegister(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +78,10 @@ namespace Store.PresentationLayer
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+        public static void ServiceRegister(IServiceCollection services)
+        {
+            DependencyContainer.ServiceRegister(services);
         }
     }
 }
